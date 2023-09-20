@@ -2,9 +2,9 @@
 
 # E-COMMERCE MVP DEPLOYMENT
 
-** Project Description**
+**Project Description**
 
-In another project based in a real-world scenario, I worked as Cloud Engineer using DevOps, where I created and implemented an e-Commerce MVP (Minimum Viable Product) on AWS in less than 2 hours and in an automated way using Terraform and Ansible (Infrastructure as Code – IaC).
+In another project based on a real-world scenario, I worked as a Cloud Engineer using DevOps, where I created and implemented an e-Commerce MVP (Minimum Viable Product) on AWS in less than 2 hours and in an automated way using Terraform and Ansible (Infrastructure as Code – IaC).
 
 **SYSTEM DESIGN**
 ![Alt text](<Images/e-commerce achitecture.png>)
@@ -14,23 +14,23 @@ In another project based in a real-world scenario, I worked as Cloud Engineer us
 - Magento account 
 - Terraforms and ansible knowledge
 
-To address this situation I provisioned the infrastructure in an automated way levaraging on the Terraform and Ansible to automate the configuration management process, software installation and package management of the EC2 instance. I also used Magento, PHP, MySQL, and Redis to complete this project.
+To address this situation I provisioned the infrastructure in an automated way leveraging Terraform and Ansible to automate the configuration management process, software installation, and package management of the EC2 instance. I also used Magento, PHP, MySQL, and Redis to complete this project.
 
 let's get to it. 
 
 
-**Step 1:Create Magento free account on**
+**Step 1 Create a Magento free account on**
 
-Browse to the magento marketplace web site at https://marketplace.magento.com/ and create an account. Once done, login and navigate to MY profile, by clicking the dropdown arrow beside you account name. Create and Save the Public and Private Key from your Magento account.
+Browse the Magento marketplace website at https://marketplace.magento.com/ and create an account. Once done, log in and navigate to MY profile, by clicking the dropdown arrow beside your account name. Create and Save the Public and Private Key from your Magento account.
 
 ![Alt text](<Images/magento key creation.png>)
 ![Alt text](<Images/My Access Keys.png>)
 
-Copy key and save for future use.
+Copy the key and save it for future use.
 
 
 **Step 2: Install Terraform on AWS Cloud Shell**
-Login on to your AWS console and open AWS cloud Shell and install terraform. 
+Login to your AWS console open AWS cloud Shell and install Terraform. 
 
 ```console
 sudo yum install -y yum-utils
@@ -51,7 +51,7 @@ unzip final-project-terraform.zip
 
 
 **Step 4: Edit Terraform files | variable**
-In the aws CLi use nano editor to modify the variables in the `main.tf` file by replacing the Variable vpc_id and key_name with that of your aws environment in my case I use the default VPC and created a key called **sshkey1**. Save the file and exit when done.
+In the aws CLi use nano editor to modify the variables in the `main.tf` file by replacing the Variable vpc_id and key_name with that of your AWS environment in my case I used the default VPC and created a key called **sshkey1**. Save the file and exit when done.
 
 ![Alt text](Images/main.tf.png)
 
@@ -114,7 +114,7 @@ Edit the admin login credentials.
 cd ..
 ansible-playbook -i hosts.yml ansible-magento2.yml -k -vvv --become
 ```
-This should take about 5 minute to complete. Just be patient.
+This should take about 5 minutes to complete. Just be patient.
 
 ![Alt text](<Images/play success.png>)
 
@@ -133,7 +133,7 @@ User: Admin
 Password: Strong123Password#
 ![Alt text](<Images/2023-09-20 15_36_30-Magento Admin.png>)
 
-(User and Password of the Magento Admin available in the file: group_vars/all.yml)
+(The user and Password of the Magento Admin are available in the file: group_vars/all.yml)
 
 ![Alt text](Images/adminloginpage.png)
 
@@ -141,7 +141,7 @@ Password: Strong123Password#
 https://tcb-bootcamps.s3.amazonaws.com/bootcamp-aws/en/final-project-images.zip 
 
 -- Content > Configuration > HTML Head > Edit (Default Store View)
---- Default page title: The Clodu Bootcamp Store
+--- Default page title: The Cloud Bootcamp Store
 --- Header > Logo image: The Cloud Bootcamp logo from images
 --- Header > Welcome text: Welcome to The Cloud Bootcamp Store!
 --- Cache Refresh (Flush it)
@@ -165,14 +165,14 @@ let's try to add items to the site.
 ![Alt text](<Images/add widget.png>)
 
 
-Take note, if you run in an erro trying to upload a images to the side, follow the instructions in this link to troubleshoot
+Take note, if you run into an error trying to upload a image to the side, follow the instructions in this link to troubleshoot
 
 https://community.magento.com/t5/Magento-2-x-Technical-Issues/Magento-2-3-0-Can-t-upload-logo-img/td-p/115196
 
 GOOD LucK 
 
 **Step 14: Check if the customization is in place**
-click on the drop down menu beside admin and select customer view. 
+click on the drop-down menu beside admin and select customer view. 
 
 ![Alt text](<Images/final home page.png>)
 
